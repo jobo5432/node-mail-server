@@ -3,7 +3,7 @@ var _ = require('underscore');
 var credentials = require('./credentials.js');
 
 module.exports = {
-  sendHTMLMail : function (recipients, subject, message, debugMode = false) {
+  sendHTMLMail : function (recipients, subject, message, debugMode) {
     var transporter = nodemailer.createTransport({
       service: credentials.emailCredentials.service,
       auth: {
