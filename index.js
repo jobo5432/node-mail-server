@@ -5,7 +5,7 @@ var fs         = require('fs');
 var moment     = require('moment');
 var bodyParser = require('body-parser');
 
-var PORT_NUM = 3388;
+var PORT_NUM = 3333;
 
 function RespondToMailingListSignUp(req) {
   try {
