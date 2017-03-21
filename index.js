@@ -5,6 +5,8 @@ var fs         = require('fs');
 var moment     = require('moment');
 var bodyParser = require('body-parser');
 
+var PORT_NUM = 3388;
+
 function RespondToMailingListSignUp(req) {
   try {
     var fileContents = fs.readFileSync('./email-list-request-template.html', 'utf8');
@@ -80,6 +82,6 @@ app.post('/contact-us-request', function (req, res) {
   }
 });
 
-app.listen(3333, function () {
+app.listen(PORT_NUM, function () {
   console.log("Waiting for stuff to come from places beyond...");
 })
