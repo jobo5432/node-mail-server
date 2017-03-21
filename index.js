@@ -15,7 +15,7 @@ function RespondToMailingListSignUp(req) {
       .replace(/{{email}}/g, req.body.email)
       .replace(/{{year}}/g, moment().format("YYYY"));
 
-    MailServer.sendHTMLMail([req.body.email, 'westwoodlinks@gmail.com'], 'WestwoodLinks.com - Mailing List Signup', fileContents, true);
+    MailServer.sendHTMLMail([req.body.email, 'westwoodlinks@gmail.com', 'wespga1@comcast.net'], 'WestwoodLinks.com - Mailing List Signup', fileContents, true);
     return true;
   } catch (e) {
     throw e;
@@ -32,7 +32,7 @@ function RespondToContactFormSubmission(req) {
       .replace(/{{message}}/g, req.body.message)
       .replace(/{{year}}/g, moment().format("YYYY"));
 
-    MailServer.sendHTMLMail([req.body.email, 'westwoodlinks@gmail.com'], 'WestwoodLinks.com - Contact Form Submission', fileContents, true);
+    MailServer.sendHTMLMail([req.body.email, 'westwoodlinks@gmail.com', 'wespga1@comcast.net'], 'WestwoodLinks.com - Contact Form Submission', fileContents, true);
     return true;
   } catch (e) {
     throw e;
@@ -40,7 +40,7 @@ function RespondToContactFormSubmission(req) {
 }
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost");
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
