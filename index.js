@@ -53,7 +53,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function (req, res) {
-  res.send("You shouldn't be meddling here...");
+  res.redirect('http://' + req.headers.host + ':80');
 });
 
 app.post('/mailing-list-request', function (req, res) {
@@ -83,5 +83,5 @@ app.post('/contact-us-request', function (req, res) {
 });
 
 app.listen(PORT_NUM, function () {
-  console.log("Waiting for stuff to come from places beyond...");
+  console.log("Waiting for stuff to come from places beyond... On port 3333, btw :)");
 })
