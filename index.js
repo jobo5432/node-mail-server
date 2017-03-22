@@ -53,7 +53,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/', function (req, res) {
-  res.redirect('http://' + req.headers.host + ':80');
+  res.send("you're not supposed to be here...");
 });
 
 app.post('/mailing-list-request', function (req, res) {
